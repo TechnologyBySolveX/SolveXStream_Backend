@@ -23,10 +23,12 @@ on:
     branches: ["main"]
 
 jobs:
+# =======================
+# CI JOB: BUILD & PUSH
+# =======================
   build:
     runs-on: ubuntu-latest
 
-    # Only needed if tests or build require DB connectivity
     env:
       SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }}
       SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
@@ -56,6 +58,10 @@ jobs:
       - name: Push Docker image
         run: docker push sunilya96/java-backend:latest
 
+
+# =======================
+# CD JOB: DEPLOY ON EC2
+# =======================
   deploy:
     needs: build
     runs-on: [self-hosted, linux, x64, aws_ec2]
