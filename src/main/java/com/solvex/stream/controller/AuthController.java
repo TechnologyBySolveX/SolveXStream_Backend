@@ -9,9 +9,10 @@ import com.solvex.stream.repository.UserRepository;
 
 import java.util.Optional;
 
+
+@CrossOrigin(origins = "http://98.130.8.136")
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://98.130.8.136")
 public class AuthController {
 
  private final UserRepository repo;
@@ -19,6 +20,14 @@ public class AuthController {
  public AuthController(UserRepository repo) {
      this.repo = repo;
  }
+
+// Getting All the Data from the database for testing Purpose Okay 
+ 
+ @GetMapping
+ public List<User> getAllUserData(){
+	 return repo.findAll(); 
+ }
+
 
  // SIGNUP
  @PostMapping("/signup")
