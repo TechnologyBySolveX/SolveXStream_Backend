@@ -90,7 +90,7 @@ jobs:
           docker run -d \
             --name springboot-app \
             --network mynetwork \
-            -p 8081:8080 \
+            -p 8081:8081 \
             -e SPRING_DATASOURCE_URL="${{ secrets.SPRING_DATASOURCE_URL }}" \
             -e SPRING_DATASOURCE_USERNAME="${{ secrets.SPRING_DATASOURCE_USERNAME }}" \
             -e SPRING_DATASOURCE_PASSWORD="${{ secrets.SPRING_DATASOURCE_PASSWORD }}" \
