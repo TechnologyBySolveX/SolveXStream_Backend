@@ -27,6 +27,7 @@ public class AuthController {
  
  @GetMapping
  public List<User> getAllUserData(){
+	 System.out.println("I am calling the get All user data Methods");
 	 return repo.findAll(); 
  }
 
