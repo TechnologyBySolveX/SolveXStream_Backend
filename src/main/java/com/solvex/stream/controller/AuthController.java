@@ -12,7 +12,7 @@ import java.util.List;
 
 
 
-@CrossOrigin(origins = "http://98.130.8.136")
+//@CrossOrigin(origins = "http://98.130.8.136")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -63,4 +63,6 @@ public class AuthController {
  	    }
      return "Invalid credentials!";
  }
+ 
+ 
 }
