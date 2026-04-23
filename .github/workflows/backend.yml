@@ -33,7 +33,7 @@ jobs:
       SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }}
       SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
       SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
-      FRONTEND_ALLOWED_ORIGIN: ${{ secrets.FRONTEND_ALLOWED_ORIGIN }}
+      
 
     steps:
       - name: Checkout code
@@ -94,8 +94,6 @@ jobs:
             -e SPRING_DATASOURCE_URL="${{ secrets.SPRING_DATASOURCE_URL }}" \
             -e SPRING_DATASOURCE_USERNAME="${{ secrets.SPRING_DATASOURCE_USERNAME }}" \
             -e SPRING_DATASOURCE_PASSWORD="${{ secrets.SPRING_DATASOURCE_PASSWORD }}" \
-            -e FRONTEND_ALLOWED_ORIGIN="${{ secrets.FRONTEND_ALLOWED_ORIGIN }}" \
             -e JAVA_OPTS="-Xms128m -Xmx256m" \
             --restart unless-stopped \
             sunilya96/java-backend:latest
-``
