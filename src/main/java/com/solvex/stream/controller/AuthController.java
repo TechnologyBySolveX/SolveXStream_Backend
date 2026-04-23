@@ -12,7 +12,7 @@ import java.util.List;
 
 
 
-//@CrossOrigin(origins = "http://98.130.8.136")
+//@CrossOrigin(origins = "No Need IP here")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
