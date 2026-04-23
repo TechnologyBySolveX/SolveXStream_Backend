@@ -58,7 +58,6 @@ jobs:
       - name: Push Docker image
         run: docker push sunilya96/java-backend:latest
 
-
 # =======================
 # CD JOB: DEPLOY ON EC2
 # =======================
@@ -94,7 +93,7 @@ jobs:
             -e SPRING_DATASOURCE_URL="${{ secrets.SPRING_DATASOURCE_URL }}" \
             -e SPRING_DATASOURCE_USERNAME="${{ secrets.SPRING_DATASOURCE_USERNAME }}" \
             -e SPRING_DATASOURCE_PASSWORD="${{ secrets.SPRING_DATASOURCE_PASSWORD }}" \
-	    -e FRONTEND_ALLOWED_ORIGIN="${{ secrets.FRONTEND_ALLOWED_ORIGIN }}" \
+            -e FRONTEND_ALLOWED_ORIGIN="${{ secrets.FRONTEND_ALLOWED_ORIGIN }}" \
             -e JAVA_OPTS="-Xms128m -Xmx256m" \
             --restart unless-stopped \
             sunilya96/java-backend:latest
