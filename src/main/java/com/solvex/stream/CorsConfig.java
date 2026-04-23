@@ -17,7 +17,7 @@ public class CorsConfig {
                         .allowedOrigins("http://98.130.8.136")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(true);
+                        .allowCredentials(true); 
             }
         };
     }
